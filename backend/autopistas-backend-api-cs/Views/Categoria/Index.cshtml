@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Project.Models.Categoria>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StrCategoria)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IntPesoMaximo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IntTolerancia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StrDescripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IntEjeSencillo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IntEjeTandem)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IntTotalEjes)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StrCategoria)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IntPesoMaximo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IntTolerancia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StrDescripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IntEjeSencillo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IntEjeTandem)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IntTotalEjes)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IntIdCategoria">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IntIdCategoria">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IntIdCategoria">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

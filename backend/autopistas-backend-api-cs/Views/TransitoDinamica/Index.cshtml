@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Project.Models.TransitoDinamica>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IntIdCategoria)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StrPlacaVehiculo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DtFechaHoraTransito)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IntPesoGeneral)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StrPesoEjes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FltVelocidad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TxtBase64Placa)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IntIdCategoria)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StrPlacaVehiculo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DtFechaHoraTransito)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IntPesoGeneral)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StrPesoEjes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FltVelocidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TxtBase64Placa)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IntIdDinamica">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IntIdDinamica">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IntIdDinamica">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

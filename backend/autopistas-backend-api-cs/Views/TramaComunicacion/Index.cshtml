@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Project.Models.TramaComunicacion>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StrNombreTrama)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IntPosicionInicial)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IntTotalDatosPeso)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CrCaracterFin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CrCaracterInicio)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StrNombreTrama)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IntPosicionInicial)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IntTotalDatosPeso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CrCaracterFin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CrCaracterInicio)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IntIdTrama">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IntIdTrama">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IntIdTrama">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

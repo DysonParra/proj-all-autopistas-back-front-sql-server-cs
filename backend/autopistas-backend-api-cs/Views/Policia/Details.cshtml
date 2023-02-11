@@ -1,0 +1,36 @@
+﻿@model Project.Models.Policia
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Policia</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StrNombrePolicia)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StrNombrePolicia)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StrApellidoPolicia)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StrApellidoPolicia)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StrTelefono)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StrTelefono)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.IntIdPolicia">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

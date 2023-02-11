@@ -1,0 +1,89 @@
+﻿@model IEnumerable<Project.Models.Menu>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StrTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StrSubtitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StrType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StrIcon)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StrLink)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BitExactMatch)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BitActive)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BitDisabled)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StrBadge)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StrFather)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StrTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StrSubtitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StrType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StrIcon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StrLink)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BitExactMatch)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BitActive)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BitDisabled)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StrBadge)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StrFather)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.StrId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.StrId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.StrId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

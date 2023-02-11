@@ -1,0 +1,63 @@
+﻿@model Project.Models.Comparendo
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Comparendo</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IntCodigoComparendo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IntCodigoComparendo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StrObservaciones)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StrObservaciones)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EnmTipoInfractor)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EnmTipoInfractor)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IntCedulaConductor)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IntCedulaConductor)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IntIdPolicia)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IntIdPolicia)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StrPlacaVehiculo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StrPlacaVehiculo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IntTiqueteNro)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IntTiqueteNro)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IntIdComparendo" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

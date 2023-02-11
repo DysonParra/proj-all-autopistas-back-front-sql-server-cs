@@ -1,0 +1,95 @@
+﻿@model IEnumerable<Project.Models.RegistroVehiculo>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DtFechaHoraEstatica)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IntPesoEstatica)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IntSobrepeso)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BitPesajeAutorizado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BitComparendo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IntCedulaConductor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IntCedulaUsuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IntIdCategoria)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IntIdMercancia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IntIdRepeso)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StrPlacaVehiculo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DtFechaHoraEstatica)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IntPesoEstatica)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IntSobrepeso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BitPesajeAutorizado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BitComparendo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IntCedulaConductor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IntCedulaUsuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IntIdCategoria)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IntIdMercancia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IntIdRepeso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StrPlacaVehiculo)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IntTiqueteNro">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IntTiqueteNro">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IntTiqueteNro">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

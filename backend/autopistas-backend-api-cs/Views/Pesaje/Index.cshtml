@@ -1,0 +1,167 @@
+﻿@model IEnumerable<Project.Models.Pesaje>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IntTiqueteNumero)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StrPlaca)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StrCodigo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IntNumeroInterno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StrTipoVehiculo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StrConductor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StrCedula)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StrProducto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StrPlanta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StrCliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StrTransportadora)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DtFechaHoraPesoVacio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DtFechaHoraPesoLleno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StrCiv)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StrDireccion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StrEntregadoPor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StrRecibidoPor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StrShipment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StrSello)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StrR)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StrContenedor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StrObservacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EnmTipoIngreso)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IntTiqueteNumero)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StrPlaca)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StrCodigo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IntNumeroInterno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StrTipoVehiculo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StrConductor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StrCedula)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StrProducto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StrPlanta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StrCliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StrTransportadora)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DtFechaHoraPesoVacio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DtFechaHoraPesoLleno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StrCiv)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StrDireccion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StrEntregadoPor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StrRecibidoPor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StrShipment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StrSello)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StrR)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StrContenedor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StrObservacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EnmTipoIngreso)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IntId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IntId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IntId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,58 @@
+﻿@model Project.Models.Usuario
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Usuario</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="StrNombreUsuario" class="control-label"></label>
+                <input asp-for="StrNombreUsuario" class="form-control" />
+                <span asp-validation-for="StrNombreUsuario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StrApellidoUsuario" class="control-label"></label>
+                <input asp-for="StrApellidoUsuario" class="form-control" />
+                <span asp-validation-for="StrApellidoUsuario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StrSeudonimo" class="control-label"></label>
+                <input asp-for="StrSeudonimo" class="form-control" />
+                <span asp-validation-for="StrSeudonimo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EnmTipoUsuario" class="control-label"></label>
+                <input asp-for="EnmTipoUsuario" class="form-control" />
+                <span asp-validation-for="EnmTipoUsuario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StrContrasena" class="control-label"></label>
+                <input asp-for="StrContrasena" class="form-control" />
+                <span asp-validation-for="StrContrasena" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StrCargoUsuario" class="control-label"></label>
+                <input asp-for="StrCargoUsuario" class="form-control" />
+                <span asp-validation-for="StrCargoUsuario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

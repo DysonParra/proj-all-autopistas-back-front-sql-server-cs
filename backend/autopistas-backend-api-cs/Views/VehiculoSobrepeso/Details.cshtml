@@ -1,0 +1,48 @@
+﻿@model Project.Models.VehiculoSobrepeso
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>VehiculoSobrepeso</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IntPesoMaximo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IntPesoMaximo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IntDiferenciaPeso)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IntDiferenciaPeso)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StrPlacaVehiculo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StrPlacaVehiculo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BitBorrado)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BitBorrado)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IntIdDinamica)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IntIdDinamica)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.IntIdRepeso">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

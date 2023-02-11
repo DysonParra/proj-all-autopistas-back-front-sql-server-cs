@@ -1,0 +1,63 @@
+﻿@model Project.Models.Comparendo
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Comparendo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IntCodigoComparendo" class="control-label"></label>
+                <input asp-for="IntCodigoComparendo" class="form-control" />
+                <span asp-validation-for="IntCodigoComparendo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StrObservaciones" class="control-label"></label>
+                <input asp-for="StrObservaciones" class="form-control" />
+                <span asp-validation-for="StrObservaciones" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EnmTipoInfractor" class="control-label"></label>
+                <input asp-for="EnmTipoInfractor" class="form-control" />
+                <span asp-validation-for="EnmTipoInfractor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IntCedulaConductor" class="control-label"></label>
+                <input asp-for="IntCedulaConductor" class="form-control" />
+                <span asp-validation-for="IntCedulaConductor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IntIdPolicia" class="control-label"></label>
+                <input asp-for="IntIdPolicia" class="form-control" />
+                <span asp-validation-for="IntIdPolicia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StrPlacaVehiculo" class="control-label"></label>
+                <input asp-for="StrPlacaVehiculo" class="form-control" />
+                <span asp-validation-for="StrPlacaVehiculo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IntTiqueteNro" class="control-label"></label>
+                <input asp-for="IntTiqueteNro" class="form-control" />
+                <span asp-validation-for="IntTiqueteNro" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

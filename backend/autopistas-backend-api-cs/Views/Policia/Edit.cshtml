@@ -1,0 +1,44 @@
+﻿@model Project.Models.Policia
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Policia</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IntIdPolicia" />
+            <div class="form-group">
+                <label asp-for="StrNombrePolicia" class="control-label"></label>
+                <input asp-for="StrNombrePolicia" class="form-control" />
+                <span asp-validation-for="StrNombrePolicia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StrApellidoPolicia" class="control-label"></label>
+                <input asp-for="StrApellidoPolicia" class="form-control" />
+                <span asp-validation-for="StrApellidoPolicia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StrTelefono" class="control-label"></label>
+                <input asp-for="StrTelefono" class="form-control" />
+                <span asp-validation-for="StrTelefono" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

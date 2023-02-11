@@ -1,0 +1,63 @@
+﻿@model Project.Models.Categoria
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Categoria</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="StrCategoria" class="control-label"></label>
+                <input asp-for="StrCategoria" class="form-control" />
+                <span asp-validation-for="StrCategoria" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IntPesoMaximo" class="control-label"></label>
+                <input asp-for="IntPesoMaximo" class="form-control" />
+                <span asp-validation-for="IntPesoMaximo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IntTolerancia" class="control-label"></label>
+                <input asp-for="IntTolerancia" class="form-control" />
+                <span asp-validation-for="IntTolerancia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StrDescripcion" class="control-label"></label>
+                <input asp-for="StrDescripcion" class="form-control" />
+                <span asp-validation-for="StrDescripcion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IntEjeSencillo" class="control-label"></label>
+                <input asp-for="IntEjeSencillo" class="form-control" />
+                <span asp-validation-for="IntEjeSencillo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IntEjeTandem" class="control-label"></label>
+                <input asp-for="IntEjeTandem" class="form-control" />
+                <span asp-validation-for="IntEjeTandem" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IntTotalEjes" class="control-label"></label>
+                <input asp-for="IntTotalEjes" class="form-control" />
+                <span asp-validation-for="IntTotalEjes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

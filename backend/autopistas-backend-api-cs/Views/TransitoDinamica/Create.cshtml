@@ -1,0 +1,63 @@
+﻿@model Project.Models.TransitoDinamica
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>TransitoDinamica</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IntIdCategoria" class="control-label"></label>
+                <input asp-for="IntIdCategoria" class="form-control" />
+                <span asp-validation-for="IntIdCategoria" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StrPlacaVehiculo" class="control-label"></label>
+                <input asp-for="StrPlacaVehiculo" class="form-control" />
+                <span asp-validation-for="StrPlacaVehiculo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DtFechaHoraTransito" class="control-label"></label>
+                <input asp-for="DtFechaHoraTransito" class="form-control" />
+                <span asp-validation-for="DtFechaHoraTransito" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IntPesoGeneral" class="control-label"></label>
+                <input asp-for="IntPesoGeneral" class="form-control" />
+                <span asp-validation-for="IntPesoGeneral" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StrPesoEjes" class="control-label"></label>
+                <input asp-for="StrPesoEjes" class="form-control" />
+                <span asp-validation-for="StrPesoEjes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FltVelocidad" class="control-label"></label>
+                <input asp-for="FltVelocidad" class="form-control" />
+                <span asp-validation-for="FltVelocidad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TxtBase64Placa" class="control-label"></label>
+                <input asp-for="TxtBase64Placa" class="form-control" />
+                <span asp-validation-for="TxtBase64Placa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

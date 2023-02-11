@@ -1,0 +1,156 @@
+﻿@model Project.Models.Pesaje
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Pesaje</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IntTiqueteNumero)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IntTiqueteNumero)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StrPlaca)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StrPlaca)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StrCodigo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StrCodigo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IntNumeroInterno)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IntNumeroInterno)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StrTipoVehiculo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StrTipoVehiculo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StrConductor)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StrConductor)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StrCedula)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StrCedula)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StrProducto)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StrProducto)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StrPlanta)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StrPlanta)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StrCliente)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StrCliente)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StrTransportadora)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StrTransportadora)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DtFechaHoraPesoVacio)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DtFechaHoraPesoVacio)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DtFechaHoraPesoLleno)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DtFechaHoraPesoLleno)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StrCiv)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StrCiv)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StrDireccion)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StrDireccion)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StrEntregadoPor)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StrEntregadoPor)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StrRecibidoPor)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StrRecibidoPor)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StrShipment)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StrShipment)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StrSello)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StrSello)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StrR)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StrR)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StrContenedor)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StrContenedor)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StrObservacion)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StrObservacion)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EnmTipoIngreso)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EnmTipoIngreso)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.IntId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

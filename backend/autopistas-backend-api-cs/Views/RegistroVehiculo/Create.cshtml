@@ -1,0 +1,83 @@
+﻿@model Project.Models.RegistroVehiculo
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>RegistroVehiculo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="DtFechaHoraEstatica" class="control-label"></label>
+                <input asp-for="DtFechaHoraEstatica" class="form-control" />
+                <span asp-validation-for="DtFechaHoraEstatica" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IntPesoEstatica" class="control-label"></label>
+                <input asp-for="IntPesoEstatica" class="form-control" />
+                <span asp-validation-for="IntPesoEstatica" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IntSobrepeso" class="control-label"></label>
+                <input asp-for="IntSobrepeso" class="form-control" />
+                <span asp-validation-for="IntSobrepeso" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BitPesajeAutorizado" class="control-label"></label>
+                <input asp-for="BitPesajeAutorizado" class="form-control" />
+                <span asp-validation-for="BitPesajeAutorizado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BitComparendo" class="control-label"></label>
+                <input asp-for="BitComparendo" class="form-control" />
+                <span asp-validation-for="BitComparendo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IntCedulaConductor" class="control-label"></label>
+                <input asp-for="IntCedulaConductor" class="form-control" />
+                <span asp-validation-for="IntCedulaConductor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IntCedulaUsuario" class="control-label"></label>
+                <input asp-for="IntCedulaUsuario" class="form-control" />
+                <span asp-validation-for="IntCedulaUsuario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IntIdCategoria" class="control-label"></label>
+                <input asp-for="IntIdCategoria" class="form-control" />
+                <span asp-validation-for="IntIdCategoria" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IntIdMercancia" class="control-label"></label>
+                <input asp-for="IntIdMercancia" class="form-control" />
+                <span asp-validation-for="IntIdMercancia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IntIdRepeso" class="control-label"></label>
+                <input asp-for="IntIdRepeso" class="form-control" />
+                <span asp-validation-for="IntIdRepeso" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StrPlacaVehiculo" class="control-label"></label>
+                <input asp-for="StrPlacaVehiculo" class="form-control" />
+                <span asp-validation-for="StrPlacaVehiculo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

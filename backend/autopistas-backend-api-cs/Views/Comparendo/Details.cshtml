@@ -1,0 +1,60 @@
+﻿@model Project.Models.Comparendo
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Comparendo</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IntCodigoComparendo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IntCodigoComparendo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StrObservaciones)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StrObservaciones)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EnmTipoInfractor)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EnmTipoInfractor)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IntCedulaConductor)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IntCedulaConductor)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IntIdPolicia)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IntIdPolicia)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StrPlacaVehiculo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StrPlacaVehiculo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IntTiqueteNro)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IntTiqueteNro)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.IntIdComparendo">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,78 @@
+﻿@model Project.Models.Menu
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Menu</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StrTitle)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StrTitle)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StrSubtitle)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StrSubtitle)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StrType)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StrType)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StrIcon)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StrIcon)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StrLink)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StrLink)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BitExactMatch)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BitExactMatch)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BitActive)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BitActive)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BitDisabled)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BitDisabled)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StrBadge)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StrBadge)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StrFather)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StrFather)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.StrId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

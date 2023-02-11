@@ -1,0 +1,48 @@
+﻿@model Project.Models.TramaComunicacion
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>TramaComunicacion</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StrNombreTrama)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StrNombreTrama)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IntPosicionInicial)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IntPosicionInicial)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IntTotalDatosPeso)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IntTotalDatosPeso)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CrCaracterFin)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CrCaracterFin)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CrCaracterInicio)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CrCaracterInicio)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.IntIdTrama">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
