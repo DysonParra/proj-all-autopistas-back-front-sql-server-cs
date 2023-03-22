@@ -1,5 +1,5 @@
 /*
- * @fileoverview    {Badge} se encarga de realizar tareas específicas.
+ * @fileoverview    {Badge}
  *
  * @version         2.0
  *
