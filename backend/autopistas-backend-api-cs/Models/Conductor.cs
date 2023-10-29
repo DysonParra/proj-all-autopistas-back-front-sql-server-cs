@@ -16,7 +16,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 
 /**
- * TODO: Definición de {@code Conductor}.
+ * TODO: Description of {@code Conductor}.
  *
  * @author Dyson Parra
  */

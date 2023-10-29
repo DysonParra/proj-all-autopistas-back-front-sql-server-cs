@@ -16,7 +16,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 
 /**
- * TODO: Definición de {@code Menu}.
+ * TODO: Description of {@code Menu}.
  *
  * @author Dyson Parra
  */

@@ -16,7 +16,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 
 /**
- * TODO: Definición de {@code Pesaje}.
+ * TODO: Description of {@code Pesaje}.
  *
  * @author Dyson Parra
  */

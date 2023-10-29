@@ -16,7 +16,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 
 /**
- * TODO: Definición de {@code RegistroVehiculo}.
+ * TODO: Description of {@code RegistroVehiculo}.
  *
  * @author Dyson Parra
  */

@@ -16,7 +16,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 
 /**
- * TODO: Definición de {@code TransitoDinamica}.
+ * TODO: Description of {@code TransitoDinamica}.
  *
  * @author Dyson Parra
  */

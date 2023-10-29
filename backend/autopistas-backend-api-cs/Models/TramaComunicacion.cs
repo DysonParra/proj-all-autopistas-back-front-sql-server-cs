@@ -16,7 +16,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 
 /**
- * TODO: Definición de {@code TramaComunicacion}.
+ * TODO: Description of {@code TramaComunicacion}.
  *
  * @author Dyson Parra
  */

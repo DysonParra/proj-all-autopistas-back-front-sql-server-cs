@@ -16,7 +16,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 
 /**
- * TODO: Definición de {@code VehiculoSobrepeso}.
+ * TODO: Description of {@code VehiculoSobrepeso}.
  *
  * @author Dyson Parra
  */

@@ -16,7 +16,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 
 /**
- * TODO: Definición de {@code Mercancia}.
+ * TODO: Description of {@code Mercancia}.
  *
  * @author Dyson Parra
  */

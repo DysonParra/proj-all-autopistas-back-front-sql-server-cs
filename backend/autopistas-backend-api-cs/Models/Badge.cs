@@ -16,7 +16,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 
 /**
- * TODO: Definición de {@code Badge}.
+ * TODO: Description of {@code Badge}.
  *
  * @author Dyson Parra
  */

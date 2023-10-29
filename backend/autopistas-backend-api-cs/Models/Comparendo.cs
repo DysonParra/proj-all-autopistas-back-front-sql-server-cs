@@ -16,7 +16,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 
 /**
- * TODO: Definición de {@code Comparendo}.
+ * TODO: Description of {@code Comparendo}.
  *
  * @author Dyson Parra
  */

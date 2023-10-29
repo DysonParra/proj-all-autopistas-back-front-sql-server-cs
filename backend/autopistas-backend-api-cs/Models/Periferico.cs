@@ -16,7 +16,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 
 /**
- * TODO: Definición de {@code Periferico}.
+ * TODO: Description of {@code Periferico}.
  *
  * @author Dyson Parra
  */
