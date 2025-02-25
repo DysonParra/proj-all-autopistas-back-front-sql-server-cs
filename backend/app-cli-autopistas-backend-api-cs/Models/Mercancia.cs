@@ -15,13 +15,14 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
-/**
- * TODO: Description of {@code Mercancia}.
- *
- * @author Dyson Parra
- */
 namespace Project.Models {
 
+    /**
+     * TODO: Description of {@code Mercancia}.
+     *
+     * @author Dyson Parra
+     * @since .NET 8 (LTS), C# 12
+     */
     public class Mercancia {
 
         [Key]

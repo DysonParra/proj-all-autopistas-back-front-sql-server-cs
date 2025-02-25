@@ -19,13 +19,17 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Project.Models;
 
-namespace Autopistas.Data
-{
-    public class AutopistasContext : DbContext
-    {
+namespace Autopistas.Data {
+
+    /**
+     * TODO: Description of {@code AutopistasContext}.
+     *
+     * @author Dyson Parra
+     * @since .NET 8 (LTS), C# 12
+     */
+    public class AutopistasContext : DbContext {
         public AutopistasContext (DbContextOptions<AutopistasContext> options)
-            : base(options)
-        {
+            : base(options) {
         }
 
         public DbSet<Project.Models.Badge> Badge { get; set; } = default!;

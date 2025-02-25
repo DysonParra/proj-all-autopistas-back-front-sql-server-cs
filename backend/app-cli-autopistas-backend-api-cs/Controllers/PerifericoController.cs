@@ -22,35 +22,35 @@ using Microsoft.EntityFrameworkCore;
 using Autopistas.Data;
 using Project.Models;
 
-namespace Autopistas.Controllers
-{
-    public class PerifericoController : Controller
-    {
+namespace Autopistas.Controllers {
+
+    /**
+     * TODO: Description of {@code PerifericoController}.
+     *
+     * @author Dyson Parra
+     * @since .NET 8 (LTS), C# 12
+     */
+    public class PerifericoController : Controller {
         private readonly AutopistasContext _context;
 
-        public PerifericoController(AutopistasContext context)
-        {
+        public PerifericoController(AutopistasContext context) {
             _context = context;
         }
 
         // GET: Periferico
-        public async Task<IActionResult> Index()
-        {
+        public async Task<IActionResult> Index() {
             return View(await _context.Periferico.ToListAsync());
         }
 
         // GET: Periferico/Details/5
-        public async Task<IActionResult> Details(long? id)
-        {
-            if (id == null || _context.Periferico == null)
-            {
+        public async Task<IActionResult> Details(long? id) {
+            if (id == null || _context.Periferico == null) {
                 return NotFound();
             }
 
             var periferico = await _context.Periferico
                 .FirstOrDefaultAsync(m => m.IntId == id);
-            if (periferico == null)
-            {
+            if (periferico == null) {
                 return NotFound();
             }
 
@@ -58,8 +58,7 @@ namespace Autopistas.Controllers
         }
 
         // GET: Periferico/Create
-        public IActionResult Create()
-        {
+        public IActionResult Create() {
             return View();
         }
 
@@ -68,10 +67,8 @@ namespace Autopistas.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IntId,EnmTipoPeriferico,StrIp,IntPuerto,StrCodigo")] Periferico periferico)
-        {
-            if (ModelState.IsValid)
-            {
+        public async Task<IActionResult> Create([Bind("IntId,EnmTipoPeriferico,StrIp,IntPuerto,StrCodigo")] Periferico periferico) {
+            if (ModelState.IsValid) {
                 _context.Add(periferico);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -80,16 +77,13 @@ namespace Autopistas.Controllers
         }
 
         // GET: Periferico/Edit/5
-        public async Task<IActionResult> Edit(long? id)
-        {
-            if (id == null || _context.Periferico == null)
-            {
+        public async Task<IActionResult> Edit(long? id) {
+            if (id == null || _context.Periferico == null) {
                 return NotFound();
             }
 
             var periferico = await _context.Periferico.FindAsync(id);
-            if (periferico == null)
-            {
+            if (periferico == null) {
                 return NotFound();
             }
             return View(periferico);
@@ -100,28 +94,21 @@ namespace Autopistas.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(long? id, [Bind("IntId,EnmTipoPeriferico,StrIp,IntPuerto,StrCodigo")] Periferico periferico)
-        {
-            if (id != periferico.IntId)
-            {
+        public async Task<IActionResult> Edit(long? id, [Bind("IntId,EnmTipoPeriferico,StrIp,IntPuerto,StrCodigo")] Periferico periferico) {
+            if (id != periferico.IntId) {
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
-            {
-                try
-                {
+            if (ModelState.IsValid) {
+                try {
                     _context.Update(periferico);
                     await _context.SaveChangesAsync();
                 }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!PerifericoExists(periferico.IntId))
-                    {
+                catch (DbUpdateConcurrencyException) {
+                    if (!PerifericoExists(periferico.IntId)) {
                         return NotFound();
                     }
-                    else
-                    {
+                    else {
                         throw;
                     }
                 }
@@ -131,17 +118,14 @@ namespace Autopistas.Controllers
         }
 
         // GET: Periferico/Delete/5
-        public async Task<IActionResult> Delete(long? id)
-        {
-            if (id == null || _context.Periferico == null)
-            {
+        public async Task<IActionResult> Delete(long? id) {
+            if (id == null || _context.Periferico == null) {
                 return NotFound();
             }
 
             var periferico = await _context.Periferico
                 .FirstOrDefaultAsync(m => m.IntId == id);
-            if (periferico == null)
-            {
+            if (periferico == null) {
                 return NotFound();
             }
 
@@ -151,15 +135,12 @@ namespace Autopistas.Controllers
         // POST: Periferico/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(long? id)
-        {
-            if (_context.Periferico == null)
-            {
+        public async Task<IActionResult> DeleteConfirmed(long? id) {
+            if (_context.Periferico == null) {
                 return Problem("Entity set 'AutopistasContext.Periferico'  is null.");
             }
             var periferico = await _context.Periferico.FindAsync(id);
-            if (periferico != null)
-            {
+            if (periferico != null) {
                 _context.Periferico.Remove(periferico);
             }
 
@@ -167,8 +148,7 @@ namespace Autopistas.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool PerifericoExists(long? id)
-        {
+        private bool PerifericoExists(long? id) {
             return _context.Periferico.Any(e => e.IntId == id);
         }
     }

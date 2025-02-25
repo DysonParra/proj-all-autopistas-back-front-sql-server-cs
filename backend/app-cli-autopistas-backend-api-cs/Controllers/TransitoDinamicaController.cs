@@ -22,35 +22,35 @@ using Microsoft.EntityFrameworkCore;
 using Autopistas.Data;
 using Project.Models;
 
-namespace Autopistas.Controllers
-{
-    public class TransitoDinamicaController : Controller
-    {
+namespace Autopistas.Controllers {
+
+    /**
+     * TODO: Description of {@code TransitoDinamicaController}.
+     *
+     * @author Dyson Parra
+     * @since .NET 8 (LTS), C# 12
+     */
+    public class TransitoDinamicaController : Controller {
         private readonly AutopistasContext _context;
 
-        public TransitoDinamicaController(AutopistasContext context)
-        {
+        public TransitoDinamicaController(AutopistasContext context) {
             _context = context;
         }
 
         // GET: TransitoDinamica
-        public async Task<IActionResult> Index()
-        {
+        public async Task<IActionResult> Index() {
             return View(await _context.TransitoDinamica.ToListAsync());
         }
 
         // GET: TransitoDinamica/Details/5
-        public async Task<IActionResult> Details(long? id)
-        {
-            if (id == null || _context.TransitoDinamica == null)
-            {
+        public async Task<IActionResult> Details(long? id) {
+            if (id == null || _context.TransitoDinamica == null) {
                 return NotFound();
             }
 
             var transitoDinamica = await _context.TransitoDinamica
                 .FirstOrDefaultAsync(m => m.IntIdDinamica == id);
-            if (transitoDinamica == null)
-            {
+            if (transitoDinamica == null) {
                 return NotFound();
             }
 
@@ -58,8 +58,7 @@ namespace Autopistas.Controllers
         }
 
         // GET: TransitoDinamica/Create
-        public IActionResult Create()
-        {
+        public IActionResult Create() {
             return View();
         }
 
@@ -68,10 +67,8 @@ namespace Autopistas.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IntIdDinamica,IntIdCategoria,StrPlacaVehiculo,DtFechaHoraTransito,IntPesoGeneral,StrPesoEjes,FltVelocidad,TxtBase64Placa")] TransitoDinamica transitoDinamica)
-        {
-            if (ModelState.IsValid)
-            {
+        public async Task<IActionResult> Create([Bind("IntIdDinamica,IntIdCategoria,StrPlacaVehiculo,DtFechaHoraTransito,IntPesoGeneral,StrPesoEjes,FltVelocidad,TxtBase64Placa")] TransitoDinamica transitoDinamica) {
+            if (ModelState.IsValid) {
                 _context.Add(transitoDinamica);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -80,16 +77,13 @@ namespace Autopistas.Controllers
         }
 
         // GET: TransitoDinamica/Edit/5
-        public async Task<IActionResult> Edit(long? id)
-        {
-            if (id == null || _context.TransitoDinamica == null)
-            {
+        public async Task<IActionResult> Edit(long? id) {
+            if (id == null || _context.TransitoDinamica == null) {
                 return NotFound();
             }
 
             var transitoDinamica = await _context.TransitoDinamica.FindAsync(id);
-            if (transitoDinamica == null)
-            {
+            if (transitoDinamica == null) {
                 return NotFound();
             }
             return View(transitoDinamica);
@@ -100,28 +94,21 @@ namespace Autopistas.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(long? id, [Bind("IntIdDinamica,IntIdCategoria,StrPlacaVehiculo,DtFechaHoraTransito,IntPesoGeneral,StrPesoEjes,FltVelocidad,TxtBase64Placa")] TransitoDinamica transitoDinamica)
-        {
-            if (id != transitoDinamica.IntIdDinamica)
-            {
+        public async Task<IActionResult> Edit(long? id, [Bind("IntIdDinamica,IntIdCategoria,StrPlacaVehiculo,DtFechaHoraTransito,IntPesoGeneral,StrPesoEjes,FltVelocidad,TxtBase64Placa")] TransitoDinamica transitoDinamica) {
+            if (id != transitoDinamica.IntIdDinamica) {
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
-            {
-                try
-                {
+            if (ModelState.IsValid) {
+                try {
                     _context.Update(transitoDinamica);
                     await _context.SaveChangesAsync();
                 }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!TransitoDinamicaExists(transitoDinamica.IntIdDinamica))
-                    {
+                catch (DbUpdateConcurrencyException) {
+                    if (!TransitoDinamicaExists(transitoDinamica.IntIdDinamica)) {
                         return NotFound();
                     }
-                    else
-                    {
+                    else {
                         throw;
                     }
                 }
@@ -131,17 +118,14 @@ namespace Autopistas.Controllers
         }
 
         // GET: TransitoDinamica/Delete/5
-        public async Task<IActionResult> Delete(long? id)
-        {
-            if (id == null || _context.TransitoDinamica == null)
-            {
+        public async Task<IActionResult> Delete(long? id) {
+            if (id == null || _context.TransitoDinamica == null) {
                 return NotFound();
             }
 
             var transitoDinamica = await _context.TransitoDinamica
                 .FirstOrDefaultAsync(m => m.IntIdDinamica == id);
-            if (transitoDinamica == null)
-            {
+            if (transitoDinamica == null) {
                 return NotFound();
             }
 
@@ -151,15 +135,12 @@ namespace Autopistas.Controllers
         // POST: TransitoDinamica/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(long? id)
-        {
-            if (_context.TransitoDinamica == null)
-            {
+        public async Task<IActionResult> DeleteConfirmed(long? id) {
+            if (_context.TransitoDinamica == null) {
                 return Problem("Entity set 'AutopistasContext.TransitoDinamica'  is null.");
             }
             var transitoDinamica = await _context.TransitoDinamica.FindAsync(id);
-            if (transitoDinamica != null)
-            {
+            if (transitoDinamica != null) {
                 _context.TransitoDinamica.Remove(transitoDinamica);
             }
 
@@ -167,8 +148,7 @@ namespace Autopistas.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool TransitoDinamicaExists(long? id)
-        {
+        private bool TransitoDinamicaExists(long? id) {
             return _context.TransitoDinamica.Any(e => e.IntIdDinamica == id);
         }
     }

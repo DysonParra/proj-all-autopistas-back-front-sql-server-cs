@@ -22,35 +22,35 @@ using Microsoft.EntityFrameworkCore;
 using Autopistas.Data;
 using Project.Models;
 
-namespace Autopistas.Controllers
-{
-    public class ComparendoController : Controller
-    {
+namespace Autopistas.Controllers {
+
+    /**
+     * TODO: Description of {@code ComparendoController}.
+     *
+     * @author Dyson Parra
+     * @since .NET 8 (LTS), C# 12
+     */
+    public class ComparendoController : Controller {
         private readonly AutopistasContext _context;
 
-        public ComparendoController(AutopistasContext context)
-        {
+        public ComparendoController(AutopistasContext context) {
             _context = context;
         }
 
         // GET: Comparendo
-        public async Task<IActionResult> Index()
-        {
+        public async Task<IActionResult> Index() {
             return View(await _context.Comparendo.ToListAsync());
         }
 
         // GET: Comparendo/Details/5
-        public async Task<IActionResult> Details(long? id)
-        {
-            if (id == null || _context.Comparendo == null)
-            {
+        public async Task<IActionResult> Details(long? id) {
+            if (id == null || _context.Comparendo == null) {
                 return NotFound();
             }
 
             var comparendo = await _context.Comparendo
                 .FirstOrDefaultAsync(m => m.IntIdComparendo == id);
-            if (comparendo == null)
-            {
+            if (comparendo == null) {
                 return NotFound();
             }
 
@@ -58,8 +58,7 @@ namespace Autopistas.Controllers
         }
 
         // GET: Comparendo/Create
-        public IActionResult Create()
-        {
+        public IActionResult Create() {
             return View();
         }
 
@@ -68,10 +67,8 @@ namespace Autopistas.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IntIdComparendo,IntCodigoComparendo,StrObservaciones,EnmTipoInfractor,IntCedulaConductor,IntIdPolicia,StrPlacaVehiculo,IntTiqueteNro")] Comparendo comparendo)
-        {
-            if (ModelState.IsValid)
-            {
+        public async Task<IActionResult> Create([Bind("IntIdComparendo,IntCodigoComparendo,StrObservaciones,EnmTipoInfractor,IntCedulaConductor,IntIdPolicia,StrPlacaVehiculo,IntTiqueteNro")] Comparendo comparendo) {
+            if (ModelState.IsValid) {
                 _context.Add(comparendo);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -80,16 +77,13 @@ namespace Autopistas.Controllers
         }
 
         // GET: Comparendo/Edit/5
-        public async Task<IActionResult> Edit(long? id)
-        {
-            if (id == null || _context.Comparendo == null)
-            {
+        public async Task<IActionResult> Edit(long? id) {
+            if (id == null || _context.Comparendo == null) {
                 return NotFound();
             }
 
             var comparendo = await _context.Comparendo.FindAsync(id);
-            if (comparendo == null)
-            {
+            if (comparendo == null) {
                 return NotFound();
             }
             return View(comparendo);
@@ -100,28 +94,21 @@ namespace Autopistas.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(long? id, [Bind("IntIdComparendo,IntCodigoComparendo,StrObservaciones,EnmTipoInfractor,IntCedulaConductor,IntIdPolicia,StrPlacaVehiculo,IntTiqueteNro")] Comparendo comparendo)
-        {
-            if (id != comparendo.IntIdComparendo)
-            {
+        public async Task<IActionResult> Edit(long? id, [Bind("IntIdComparendo,IntCodigoComparendo,StrObservaciones,EnmTipoInfractor,IntCedulaConductor,IntIdPolicia,StrPlacaVehiculo,IntTiqueteNro")] Comparendo comparendo) {
+            if (id != comparendo.IntIdComparendo) {
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
-            {
-                try
-                {
+            if (ModelState.IsValid) {
+                try {
                     _context.Update(comparendo);
                     await _context.SaveChangesAsync();
                 }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!ComparendoExists(comparendo.IntIdComparendo))
-                    {
+                catch (DbUpdateConcurrencyException) {
+                    if (!ComparendoExists(comparendo.IntIdComparendo)) {
                         return NotFound();
                     }
-                    else
-                    {
+                    else {
                         throw;
                     }
                 }
@@ -131,17 +118,14 @@ namespace Autopistas.Controllers
         }
 
         // GET: Comparendo/Delete/5
-        public async Task<IActionResult> Delete(long? id)
-        {
-            if (id == null || _context.Comparendo == null)
-            {
+        public async Task<IActionResult> Delete(long? id) {
+            if (id == null || _context.Comparendo == null) {
                 return NotFound();
             }
 
             var comparendo = await _context.Comparendo
                 .FirstOrDefaultAsync(m => m.IntIdComparendo == id);
-            if (comparendo == null)
-            {
+            if (comparendo == null) {
                 return NotFound();
             }
 
@@ -151,15 +135,12 @@ namespace Autopistas.Controllers
         // POST: Comparendo/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(long? id)
-        {
-            if (_context.Comparendo == null)
-            {
+        public async Task<IActionResult> DeleteConfirmed(long? id) {
+            if (_context.Comparendo == null) {
                 return Problem("Entity set 'AutopistasContext.Comparendo'  is null.");
             }
             var comparendo = await _context.Comparendo.FindAsync(id);
-            if (comparendo != null)
-            {
+            if (comparendo != null) {
                 _context.Comparendo.Remove(comparendo);
             }
 
@@ -167,8 +148,7 @@ namespace Autopistas.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ComparendoExists(long? id)
-        {
+        private bool ComparendoExists(long? id) {
             return _context.Comparendo.Any(e => e.IntIdComparendo == id);
         }
     }

@@ -22,35 +22,35 @@ using Microsoft.EntityFrameworkCore;
 using Autopistas.Data;
 using Project.Models;
 
-namespace Autopistas.Controllers
-{
-    public class RegistroVehiculoController : Controller
-    {
+namespace Autopistas.Controllers {
+
+    /**
+     * TODO: Description of {@code RegistroVehiculoController}.
+     *
+     * @author Dyson Parra
+     * @since .NET 8 (LTS), C# 12
+     */
+    public class RegistroVehiculoController : Controller {
         private readonly AutopistasContext _context;
 
-        public RegistroVehiculoController(AutopistasContext context)
-        {
+        public RegistroVehiculoController(AutopistasContext context) {
             _context = context;
         }
 
         // GET: RegistroVehiculo
-        public async Task<IActionResult> Index()
-        {
+        public async Task<IActionResult> Index() {
             return View(await _context.RegistroVehiculo.ToListAsync());
         }
 
         // GET: RegistroVehiculo/Details/5
-        public async Task<IActionResult> Details(long? id)
-        {
-            if (id == null || _context.RegistroVehiculo == null)
-            {
+        public async Task<IActionResult> Details(long? id) {
+            if (id == null || _context.RegistroVehiculo == null) {
                 return NotFound();
             }
 
             var registroVehiculo = await _context.RegistroVehiculo
                 .FirstOrDefaultAsync(m => m.IntTiqueteNro == id);
-            if (registroVehiculo == null)
-            {
+            if (registroVehiculo == null) {
                 return NotFound();
             }
 
@@ -58,8 +58,7 @@ namespace Autopistas.Controllers
         }
 
         // GET: RegistroVehiculo/Create
-        public IActionResult Create()
-        {
+        public IActionResult Create() {
             return View();
         }
 
@@ -68,10 +67,8 @@ namespace Autopistas.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IntTiqueteNro,DtFechaHoraEstatica,IntPesoEstatica,IntSobrepeso,BitPesajeAutorizado,BitComparendo,IntCedulaConductor,IntCedulaUsuario,IntIdCategoria,IntIdMercancia,IntIdRepeso,StrPlacaVehiculo")] RegistroVehiculo registroVehiculo)
-        {
-            if (ModelState.IsValid)
-            {
+        public async Task<IActionResult> Create([Bind("IntTiqueteNro,DtFechaHoraEstatica,IntPesoEstatica,IntSobrepeso,BitPesajeAutorizado,BitComparendo,IntCedulaConductor,IntCedulaUsuario,IntIdCategoria,IntIdMercancia,IntIdRepeso,StrPlacaVehiculo")] RegistroVehiculo registroVehiculo) {
+            if (ModelState.IsValid) {
                 _context.Add(registroVehiculo);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -80,16 +77,13 @@ namespace Autopistas.Controllers
         }
 
         // GET: RegistroVehiculo/Edit/5
-        public async Task<IActionResult> Edit(long? id)
-        {
-            if (id == null || _context.RegistroVehiculo == null)
-            {
+        public async Task<IActionResult> Edit(long? id) {
+            if (id == null || _context.RegistroVehiculo == null) {
                 return NotFound();
             }
 
             var registroVehiculo = await _context.RegistroVehiculo.FindAsync(id);
-            if (registroVehiculo == null)
-            {
+            if (registroVehiculo == null) {
                 return NotFound();
             }
             return View(registroVehiculo);
@@ -100,28 +94,21 @@ namespace Autopistas.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(long? id, [Bind("IntTiqueteNro,DtFechaHoraEstatica,IntPesoEstatica,IntSobrepeso,BitPesajeAutorizado,BitComparendo,IntCedulaConductor,IntCedulaUsuario,IntIdCategoria,IntIdMercancia,IntIdRepeso,StrPlacaVehiculo")] RegistroVehiculo registroVehiculo)
-        {
-            if (id != registroVehiculo.IntTiqueteNro)
-            {
+        public async Task<IActionResult> Edit(long? id, [Bind("IntTiqueteNro,DtFechaHoraEstatica,IntPesoEstatica,IntSobrepeso,BitPesajeAutorizado,BitComparendo,IntCedulaConductor,IntCedulaUsuario,IntIdCategoria,IntIdMercancia,IntIdRepeso,StrPlacaVehiculo")] RegistroVehiculo registroVehiculo) {
+            if (id != registroVehiculo.IntTiqueteNro) {
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
-            {
-                try
-                {
+            if (ModelState.IsValid) {
+                try {
                     _context.Update(registroVehiculo);
                     await _context.SaveChangesAsync();
                 }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!RegistroVehiculoExists(registroVehiculo.IntTiqueteNro))
-                    {
+                catch (DbUpdateConcurrencyException) {
+                    if (!RegistroVehiculoExists(registroVehiculo.IntTiqueteNro)) {
                         return NotFound();
                     }
-                    else
-                    {
+                    else {
                         throw;
                     }
                 }
@@ -131,17 +118,14 @@ namespace Autopistas.Controllers
         }
 
         // GET: RegistroVehiculo/Delete/5
-        public async Task<IActionResult> Delete(long? id)
-        {
-            if (id == null || _context.RegistroVehiculo == null)
-            {
+        public async Task<IActionResult> Delete(long? id) {
+            if (id == null || _context.RegistroVehiculo == null) {
                 return NotFound();
             }
 
             var registroVehiculo = await _context.RegistroVehiculo
                 .FirstOrDefaultAsync(m => m.IntTiqueteNro == id);
-            if (registroVehiculo == null)
-            {
+            if (registroVehiculo == null) {
                 return NotFound();
             }
 
@@ -151,15 +135,12 @@ namespace Autopistas.Controllers
         // POST: RegistroVehiculo/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(long? id)
-        {
-            if (_context.RegistroVehiculo == null)
-            {
+        public async Task<IActionResult> DeleteConfirmed(long? id) {
+            if (_context.RegistroVehiculo == null) {
                 return Problem("Entity set 'AutopistasContext.RegistroVehiculo'  is null.");
             }
             var registroVehiculo = await _context.RegistroVehiculo.FindAsync(id);
-            if (registroVehiculo != null)
-            {
+            if (registroVehiculo != null) {
                 _context.RegistroVehiculo.Remove(registroVehiculo);
             }
 
@@ -167,8 +148,7 @@ namespace Autopistas.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool RegistroVehiculoExists(long? id)
-        {
+        private bool RegistroVehiculoExists(long? id) {
             return _context.RegistroVehiculo.Any(e => e.IntTiqueteNro == id);
         }
     }

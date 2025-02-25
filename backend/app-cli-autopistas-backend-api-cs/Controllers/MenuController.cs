@@ -22,35 +22,35 @@ using Microsoft.EntityFrameworkCore;
 using Autopistas.Data;
 using Project.Models;
 
-namespace Autopistas.Controllers
-{
-    public class MenuController : Controller
-    {
+namespace Autopistas.Controllers {
+
+    /**
+     * TODO: Description of {@code MenuController}.
+     *
+     * @author Dyson Parra
+     * @since .NET 8 (LTS), C# 12
+     */
+    public class MenuController : Controller {
         private readonly AutopistasContext _context;
 
-        public MenuController(AutopistasContext context)
-        {
+        public MenuController(AutopistasContext context) {
             _context = context;
         }
 
         // GET: Menu
-        public async Task<IActionResult> Index()
-        {
+        public async Task<IActionResult> Index() {
             return View(await _context.Menu.ToListAsync());
         }
 
         // GET: Menu/Details/5
-        public async Task<IActionResult> Details(string id)
-        {
-            if (id == null || _context.Menu == null)
-            {
+        public async Task<IActionResult> Details(string id) {
+            if (id == null || _context.Menu == null) {
                 return NotFound();
             }
 
             var menu = await _context.Menu
                 .FirstOrDefaultAsync(m => m.StrId == id);
-            if (menu == null)
-            {
+            if (menu == null) {
                 return NotFound();
             }
 
@@ -58,8 +58,7 @@ namespace Autopistas.Controllers
         }
 
         // GET: Menu/Create
-        public IActionResult Create()
-        {
+        public IActionResult Create() {
             return View();
         }
 
@@ -68,10 +67,8 @@ namespace Autopistas.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("StrId,StrTitle,StrSubtitle,StrType,StrIcon,StrLink,BitExactMatch,BitActive,BitDisabled,StrBadge,StrFather")] Menu menu)
-        {
-            if (ModelState.IsValid)
-            {
+        public async Task<IActionResult> Create([Bind("StrId,StrTitle,StrSubtitle,StrType,StrIcon,StrLink,BitExactMatch,BitActive,BitDisabled,StrBadge,StrFather")] Menu menu) {
+            if (ModelState.IsValid) {
                 _context.Add(menu);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -80,16 +77,13 @@ namespace Autopistas.Controllers
         }
 
         // GET: Menu/Edit/5
-        public async Task<IActionResult> Edit(string id)
-        {
-            if (id == null || _context.Menu == null)
-            {
+        public async Task<IActionResult> Edit(string id) {
+            if (id == null || _context.Menu == null) {
                 return NotFound();
             }
 
             var menu = await _context.Menu.FindAsync(id);
-            if (menu == null)
-            {
+            if (menu == null) {
                 return NotFound();
             }
             return View(menu);
@@ -100,28 +94,21 @@ namespace Autopistas.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("StrId,StrTitle,StrSubtitle,StrType,StrIcon,StrLink,BitExactMatch,BitActive,BitDisabled,StrBadge,StrFather")] Menu menu)
-        {
-            if (id != menu.StrId)
-            {
+        public async Task<IActionResult> Edit(string id, [Bind("StrId,StrTitle,StrSubtitle,StrType,StrIcon,StrLink,BitExactMatch,BitActive,BitDisabled,StrBadge,StrFather")] Menu menu) {
+            if (id != menu.StrId) {
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
-            {
-                try
-                {
+            if (ModelState.IsValid) {
+                try {
                     _context.Update(menu);
                     await _context.SaveChangesAsync();
                 }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!MenuExists(menu.StrId))
-                    {
+                catch (DbUpdateConcurrencyException) {
+                    if (!MenuExists(menu.StrId)) {
                         return NotFound();
                     }
-                    else
-                    {
+                    else {
                         throw;
                     }
                 }
@@ -131,17 +118,14 @@ namespace Autopistas.Controllers
         }
 
         // GET: Menu/Delete/5
-        public async Task<IActionResult> Delete(string id)
-        {
-            if (id == null || _context.Menu == null)
-            {
+        public async Task<IActionResult> Delete(string id) {
+            if (id == null || _context.Menu == null) {
                 return NotFound();
             }
 
             var menu = await _context.Menu
                 .FirstOrDefaultAsync(m => m.StrId == id);
-            if (menu == null)
-            {
+            if (menu == null) {
                 return NotFound();
             }
 
@@ -151,15 +135,12 @@ namespace Autopistas.Controllers
         // POST: Menu/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(string id)
-        {
-            if (_context.Menu == null)
-            {
+        public async Task<IActionResult> DeleteConfirmed(string id) {
+            if (_context.Menu == null) {
                 return Problem("Entity set 'AutopistasContext.Menu'  is null.");
             }
             var menu = await _context.Menu.FindAsync(id);
-            if (menu != null)
-            {
+            if (menu != null) {
                 _context.Menu.Remove(menu);
             }
 
@@ -167,8 +148,7 @@ namespace Autopistas.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool MenuExists(string id)
-        {
+        private bool MenuExists(string id) {
             return _context.Menu.Any(e => e.StrId == id);
         }
     }
