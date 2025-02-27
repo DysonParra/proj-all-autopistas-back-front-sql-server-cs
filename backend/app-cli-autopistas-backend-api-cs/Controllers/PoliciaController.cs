@@ -33,16 +33,26 @@ namespace Autopistas.Controllers {
     public class PoliciaController : Controller {
         private readonly AutopistasContext _context;
 
+        /**
+         * TODO: Description of method {@code PoliciaController}.
+         *
+         */
         public PoliciaController(AutopistasContext context) {
             _context = context;
         }
 
-        // GET: Policia
+        /**
+         * GET: Policia
+         *
+         */
         public async Task<IActionResult> Index() {
             return View(await _context.Policia.ToListAsync());
         }
 
-        // GET: Policia/Details/5
+        /**
+         * GET: Policia/Details/5
+         *
+         */
         public async Task<IActionResult> Details(long? id) {
             if (id == null || _context.Policia == null) {
                 return NotFound();
@@ -57,14 +67,20 @@ namespace Autopistas.Controllers {
             return View(policia);
         }
 
-        // GET: Policia/Create
+        /**
+         * GET: Policia/Create
+         *
+         */
         public IActionResult Create() {
             return View();
         }
 
-        // POST: Policia/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        /**
+         * POST: Policia/Create
+         * To protect from overposting attacks, enable the specific properties you want to bind to.
+         * For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+         *
+         */
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("IntIdPolicia,StrNombrePolicia,StrApellidoPolicia,StrTelefono")] Policia policia) {
@@ -76,7 +92,10 @@ namespace Autopistas.Controllers {
             return View(policia);
         }
 
-        // GET: Policia/Edit/5
+        /**
+         * GET: Policia/Edit/5
+         *
+         */
         public async Task<IActionResult> Edit(long? id) {
             if (id == null || _context.Policia == null) {
                 return NotFound();
@@ -89,9 +108,12 @@ namespace Autopistas.Controllers {
             return View(policia);
         }
 
-        // POST: Policia/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        /**
+         * POST: Policia/Edit/5
+         * To protect from overposting attacks, enable the specific properties you want to bind to.
+         * For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+         *
+         */
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(long? id, [Bind("IntIdPolicia,StrNombrePolicia,StrApellidoPolicia,StrTelefono")] Policia policia) {
@@ -117,7 +139,10 @@ namespace Autopistas.Controllers {
             return View(policia);
         }
 
-        // GET: Policia/Delete/5
+        /**
+         * GET: Policia/Delete/5
+         *
+         */
         public async Task<IActionResult> Delete(long? id) {
             if (id == null || _context.Policia == null) {
                 return NotFound();
@@ -132,7 +157,10 @@ namespace Autopistas.Controllers {
             return View(policia);
         }
 
-        // POST: Policia/Delete/5
+        /**
+         * POST: Policia/Delete/5
+         *
+         */
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(long? id) {
@@ -148,6 +176,10 @@ namespace Autopistas.Controllers {
             return RedirectToAction(nameof(Index));
         }
 
+        /**
+         * TODO: Description of method {@code PoliciaExists}.
+         *
+         */
         private bool PoliciaExists(long? id) {
             return _context.Policia.Any(e => e.IntIdPolicia == id);
         }

@@ -33,16 +33,26 @@ namespace Autopistas.Controllers {
     public class PesajeController : Controller {
         private readonly AutopistasContext _context;
 
+        /**
+         * TODO: Description of method {@code PesajeController}.
+         *
+         */
         public PesajeController(AutopistasContext context) {
             _context = context;
         }
 
-        // GET: Pesaje
+        /**
+         * GET: Pesaje
+         *
+         */
         public async Task<IActionResult> Index() {
             return View(await _context.Pesaje.ToListAsync());
         }
 
-        // GET: Pesaje/Details/5
+        /**
+         * GET: Pesaje/Details/5
+         *
+         */
         public async Task<IActionResult> Details(long? id) {
             if (id == null || _context.Pesaje == null) {
                 return NotFound();
@@ -57,14 +67,20 @@ namespace Autopistas.Controllers {
             return View(pesaje);
         }
 
-        // GET: Pesaje/Create
+        /**
+         * GET: Pesaje/Create
+         *
+         */
         public IActionResult Create() {
             return View();
         }
 
-        // POST: Pesaje/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        /**
+         * POST: Pesaje/Create
+         * To protect from overposting attacks, enable the specific properties you want to bind to.
+         * For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+         *
+         */
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("IntId,IntTiqueteNumero,StrPlaca,StrCodigo,IntNumeroInterno,StrTipoVehiculo,StrConductor,StrCedula,StrProducto,StrPlanta,StrCliente,StrTransportadora,DtFechaHoraPesoVacio,DtFechaHoraPesoLleno,StrCiv,StrDireccion,StrEntregadoPor,StrRecibidoPor,StrShipment,StrSello,StrR,StrContenedor,StrObservacion,EnmTipoIngreso")] Pesaje pesaje) {
@@ -76,7 +92,10 @@ namespace Autopistas.Controllers {
             return View(pesaje);
         }
 
-        // GET: Pesaje/Edit/5
+        /**
+         * GET: Pesaje/Edit/5
+         *
+         */
         public async Task<IActionResult> Edit(long? id) {
             if (id == null || _context.Pesaje == null) {
                 return NotFound();
@@ -89,9 +108,12 @@ namespace Autopistas.Controllers {
             return View(pesaje);
         }
 
-        // POST: Pesaje/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        /**
+         * POST: Pesaje/Edit/5
+         * To protect from overposting attacks, enable the specific properties you want to bind to.
+         * For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+         *
+         */
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(long? id, [Bind("IntId,IntTiqueteNumero,StrPlaca,StrCodigo,IntNumeroInterno,StrTipoVehiculo,StrConductor,StrCedula,StrProducto,StrPlanta,StrCliente,StrTransportadora,DtFechaHoraPesoVacio,DtFechaHoraPesoLleno,StrCiv,StrDireccion,StrEntregadoPor,StrRecibidoPor,StrShipment,StrSello,StrR,StrContenedor,StrObservacion,EnmTipoIngreso")] Pesaje pesaje) {
@@ -117,7 +139,10 @@ namespace Autopistas.Controllers {
             return View(pesaje);
         }
 
-        // GET: Pesaje/Delete/5
+        /**
+         * GET: Pesaje/Delete/5
+         *
+         */
         public async Task<IActionResult> Delete(long? id) {
             if (id == null || _context.Pesaje == null) {
                 return NotFound();
@@ -132,7 +157,10 @@ namespace Autopistas.Controllers {
             return View(pesaje);
         }
 
-        // POST: Pesaje/Delete/5
+        /**
+         * POST: Pesaje/Delete/5
+         *
+         */
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(long? id) {
@@ -148,6 +176,10 @@ namespace Autopistas.Controllers {
             return RedirectToAction(nameof(Index));
         }
 
+        /**
+         * TODO: Description of method {@code PesajeExists}.
+         *
+         */
         private bool PesajeExists(long? id) {
             return _context.Pesaje.Any(e => e.IntId == id);
         }

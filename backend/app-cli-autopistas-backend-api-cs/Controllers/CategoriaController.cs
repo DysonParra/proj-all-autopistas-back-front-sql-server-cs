@@ -33,16 +33,26 @@ namespace Autopistas.Controllers {
     public class CategoriaController : Controller {
         private readonly AutopistasContext _context;
 
+        /**
+         * TODO: Description of method {@code CategoriaController}.
+         *
+         */
         public CategoriaController(AutopistasContext context) {
             _context = context;
         }
 
-        // GET: Categoria
+        /**
+         * GET: Categoria
+         *
+         */
         public async Task<IActionResult> Index() {
             return View(await _context.Categoria.ToListAsync());
         }
 
-        // GET: Categoria/Details/5
+        /**
+         * GET: Categoria/Details/5
+         *
+         */
         public async Task<IActionResult> Details(long? id) {
             if (id == null || _context.Categoria == null) {
                 return NotFound();
@@ -57,14 +67,20 @@ namespace Autopistas.Controllers {
             return View(categoria);
         }
 
-        // GET: Categoria/Create
+        /**
+         * GET: Categoria/Create
+         *
+         */
         public IActionResult Create() {
             return View();
         }
 
-        // POST: Categoria/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        /**
+         * POST: Categoria/Create
+         * To protect from overposting attacks, enable the specific properties you want to bind to.
+         * For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+         *
+         */
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("IntIdCategoria,StrCategoria,IntPesoMaximo,IntTolerancia,StrDescripcion,IntEjeSencillo,IntEjeTandem,IntTotalEjes")] Categoria categoria) {
@@ -76,7 +92,10 @@ namespace Autopistas.Controllers {
             return View(categoria);
         }
 
-        // GET: Categoria/Edit/5
+        /**
+         * GET: Categoria/Edit/5
+         *
+         */
         public async Task<IActionResult> Edit(long? id) {
             if (id == null || _context.Categoria == null) {
                 return NotFound();
@@ -89,9 +108,12 @@ namespace Autopistas.Controllers {
             return View(categoria);
         }
 
-        // POST: Categoria/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        /**
+         * POST: Categoria/Edit/5
+         * To protect from overposting attacks, enable the specific properties you want to bind to.
+         * For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+         *
+         */
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(long? id, [Bind("IntIdCategoria,StrCategoria,IntPesoMaximo,IntTolerancia,StrDescripcion,IntEjeSencillo,IntEjeTandem,IntTotalEjes")] Categoria categoria) {
@@ -117,7 +139,10 @@ namespace Autopistas.Controllers {
             return View(categoria);
         }
 
-        // GET: Categoria/Delete/5
+        /**
+         * GET: Categoria/Delete/5
+         *
+         */
         public async Task<IActionResult> Delete(long? id) {
             if (id == null || _context.Categoria == null) {
                 return NotFound();
@@ -132,7 +157,10 @@ namespace Autopistas.Controllers {
             return View(categoria);
         }
 
-        // POST: Categoria/Delete/5
+        /**
+         * POST: Categoria/Delete/5
+         *
+         */
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(long? id) {
@@ -148,6 +176,10 @@ namespace Autopistas.Controllers {
             return RedirectToAction(nameof(Index));
         }
 
+        /**
+         * TODO: Description of method {@code CategoriaExists}.
+         *
+         */
         private bool CategoriaExists(long? id) {
             return _context.Categoria.Any(e => e.IntIdCategoria == id);
         }

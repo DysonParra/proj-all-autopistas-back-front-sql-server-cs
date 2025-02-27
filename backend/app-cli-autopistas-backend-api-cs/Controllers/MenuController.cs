@@ -33,16 +33,26 @@ namespace Autopistas.Controllers {
     public class MenuController : Controller {
         private readonly AutopistasContext _context;
 
+        /**
+         * TODO: Description of method {@code MenuController}.
+         *
+         */
         public MenuController(AutopistasContext context) {
             _context = context;
         }
 
-        // GET: Menu
+        /**
+         * GET: Menu
+         *
+         */
         public async Task<IActionResult> Index() {
             return View(await _context.Menu.ToListAsync());
         }
 
-        // GET: Menu/Details/5
+        /**
+         * GET: Menu/Details/5
+         *
+         */
         public async Task<IActionResult> Details(string id) {
             if (id == null || _context.Menu == null) {
                 return NotFound();
@@ -57,14 +67,20 @@ namespace Autopistas.Controllers {
             return View(menu);
         }
 
-        // GET: Menu/Create
+        /**
+         * GET: Menu/Create
+         *
+         */
         public IActionResult Create() {
             return View();
         }
 
-        // POST: Menu/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        /**
+         * POST: Menu/Create
+         * To protect from overposting attacks, enable the specific properties you want to bind to.
+         * For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+         *
+         */
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("StrId,StrTitle,StrSubtitle,StrType,StrIcon,StrLink,BitExactMatch,BitActive,BitDisabled,StrBadge,StrFather")] Menu menu) {
@@ -76,7 +92,10 @@ namespace Autopistas.Controllers {
             return View(menu);
         }
 
-        // GET: Menu/Edit/5
+        /**
+         * GET: Menu/Edit/5
+         *
+         */
         public async Task<IActionResult> Edit(string id) {
             if (id == null || _context.Menu == null) {
                 return NotFound();
@@ -89,9 +108,12 @@ namespace Autopistas.Controllers {
             return View(menu);
         }
 
-        // POST: Menu/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        /**
+         * POST: Menu/Edit/5
+         * To protect from overposting attacks, enable the specific properties you want to bind to.
+         * For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+         *
+         */
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(string id, [Bind("StrId,StrTitle,StrSubtitle,StrType,StrIcon,StrLink,BitExactMatch,BitActive,BitDisabled,StrBadge,StrFather")] Menu menu) {
@@ -117,7 +139,10 @@ namespace Autopistas.Controllers {
             return View(menu);
         }
 
-        // GET: Menu/Delete/5
+        /**
+         * GET: Menu/Delete/5
+         *
+         */
         public async Task<IActionResult> Delete(string id) {
             if (id == null || _context.Menu == null) {
                 return NotFound();
@@ -132,7 +157,10 @@ namespace Autopistas.Controllers {
             return View(menu);
         }
 
-        // POST: Menu/Delete/5
+        /**
+         * POST: Menu/Delete/5
+         *
+         */
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id) {
@@ -148,6 +176,10 @@ namespace Autopistas.Controllers {
             return RedirectToAction(nameof(Index));
         }
 
+        /**
+         * TODO: Description of method {@code MenuExists}.
+         *
+         */
         private bool MenuExists(string id) {
             return _context.Menu.Any(e => e.StrId == id);
         }

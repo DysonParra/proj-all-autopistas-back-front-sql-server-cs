@@ -33,16 +33,26 @@ namespace Autopistas.Controllers {
     public class TramaComunicacionController : Controller {
         private readonly AutopistasContext _context;
 
+        /**
+         * TODO: Description of method {@code TramaComunicacionController}.
+         *
+         */
         public TramaComunicacionController(AutopistasContext context) {
             _context = context;
         }
 
-        // GET: TramaComunicacion
+        /**
+         * GET: TramaComunicacion
+         *
+         */
         public async Task<IActionResult> Index() {
             return View(await _context.TramaComunicacion.ToListAsync());
         }
 
-        // GET: TramaComunicacion/Details/5
+        /**
+         * GET: TramaComunicacion/Details/5
+         *
+         */
         public async Task<IActionResult> Details(long? id) {
             if (id == null || _context.TramaComunicacion == null) {
                 return NotFound();
@@ -57,14 +67,20 @@ namespace Autopistas.Controllers {
             return View(tramaComunicacion);
         }
 
-        // GET: TramaComunicacion/Create
+        /**
+         * GET: TramaComunicacion/Create
+         *
+         */
         public IActionResult Create() {
             return View();
         }
 
-        // POST: TramaComunicacion/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        /**
+         * POST: TramaComunicacion/Create
+         * To protect from overposting attacks, enable the specific properties you want to bind to.
+         * For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+         *
+         */
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("IntIdTrama,StrNombreTrama,IntPosicionInicial,IntTotalDatosPeso,CrCaracterFin,CrCaracterInicio")] TramaComunicacion tramaComunicacion) {
@@ -76,7 +92,10 @@ namespace Autopistas.Controllers {
             return View(tramaComunicacion);
         }
 
-        // GET: TramaComunicacion/Edit/5
+        /**
+         * GET: TramaComunicacion/Edit/5
+         *
+         */
         public async Task<IActionResult> Edit(long? id) {
             if (id == null || _context.TramaComunicacion == null) {
                 return NotFound();
@@ -89,9 +108,12 @@ namespace Autopistas.Controllers {
             return View(tramaComunicacion);
         }
 
-        // POST: TramaComunicacion/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        /**
+         * POST: TramaComunicacion/Edit/5
+         * To protect from overposting attacks, enable the specific properties you want to bind to.
+         * For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+         *
+         */
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(long? id, [Bind("IntIdTrama,StrNombreTrama,IntPosicionInicial,IntTotalDatosPeso,CrCaracterFin,CrCaracterInicio")] TramaComunicacion tramaComunicacion) {
@@ -117,7 +139,10 @@ namespace Autopistas.Controllers {
             return View(tramaComunicacion);
         }
 
-        // GET: TramaComunicacion/Delete/5
+        /**
+         * GET: TramaComunicacion/Delete/5
+         *
+         */
         public async Task<IActionResult> Delete(long? id) {
             if (id == null || _context.TramaComunicacion == null) {
                 return NotFound();
@@ -132,7 +157,10 @@ namespace Autopistas.Controllers {
             return View(tramaComunicacion);
         }
 
-        // POST: TramaComunicacion/Delete/5
+        /**
+         * POST: TramaComunicacion/Delete/5
+         *
+         */
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(long? id) {
@@ -148,6 +176,10 @@ namespace Autopistas.Controllers {
             return RedirectToAction(nameof(Index));
         }
 
+        /**
+         * TODO: Description of method {@code TramaComunicacionExists}.
+         *
+         */
         private bool TramaComunicacionExists(long? id) {
             return _context.TramaComunicacion.Any(e => e.IntIdTrama == id);
         }

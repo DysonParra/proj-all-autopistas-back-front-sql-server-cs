@@ -33,16 +33,26 @@ namespace Autopistas.Controllers {
     public class MercanciaController : Controller {
         private readonly AutopistasContext _context;
 
+        /**
+         * TODO: Description of method {@code MercanciaController}.
+         *
+         */
         public MercanciaController(AutopistasContext context) {
             _context = context;
         }
 
-        // GET: Mercancia
+        /**
+         * GET: Mercancia
+         *
+         */
         public async Task<IActionResult> Index() {
             return View(await _context.Mercancia.ToListAsync());
         }
 
-        // GET: Mercancia/Details/5
+        /**
+         * GET: Mercancia/Details/5
+         *
+         */
         public async Task<IActionResult> Details(long? id) {
             if (id == null || _context.Mercancia == null) {
                 return NotFound();
@@ -57,14 +67,20 @@ namespace Autopistas.Controllers {
             return View(mercancia);
         }
 
-        // GET: Mercancia/Create
+        /**
+         * GET: Mercancia/Create
+         *
+         */
         public IActionResult Create() {
             return View();
         }
 
-        // POST: Mercancia/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        /**
+         * POST: Mercancia/Create
+         * To protect from overposting attacks, enable the specific properties you want to bind to.
+         * For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+         *
+         */
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("IntIdMercancia,StrNombreMercancia,StrDescripcionMercancia")] Mercancia mercancia) {
@@ -76,7 +92,10 @@ namespace Autopistas.Controllers {
             return View(mercancia);
         }
 
-        // GET: Mercancia/Edit/5
+        /**
+         * GET: Mercancia/Edit/5
+         *
+         */
         public async Task<IActionResult> Edit(long? id) {
             if (id == null || _context.Mercancia == null) {
                 return NotFound();
@@ -89,9 +108,12 @@ namespace Autopistas.Controllers {
             return View(mercancia);
         }
 
-        // POST: Mercancia/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        /**
+         * POST: Mercancia/Edit/5
+         * To protect from overposting attacks, enable the specific properties you want to bind to.
+         * For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+         *
+         */
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(long? id, [Bind("IntIdMercancia,StrNombreMercancia,StrDescripcionMercancia")] Mercancia mercancia) {
@@ -117,7 +139,10 @@ namespace Autopistas.Controllers {
             return View(mercancia);
         }
 
-        // GET: Mercancia/Delete/5
+        /**
+         * GET: Mercancia/Delete/5
+         *
+         */
         public async Task<IActionResult> Delete(long? id) {
             if (id == null || _context.Mercancia == null) {
                 return NotFound();
@@ -132,7 +157,10 @@ namespace Autopistas.Controllers {
             return View(mercancia);
         }
 
-        // POST: Mercancia/Delete/5
+        /**
+         * POST: Mercancia/Delete/5
+         *
+         */
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(long? id) {
@@ -148,6 +176,10 @@ namespace Autopistas.Controllers {
             return RedirectToAction(nameof(Index));
         }
 
+        /**
+         * TODO: Description of method {@code MercanciaExists}.
+         *
+         */
         private bool MercanciaExists(long? id) {
             return _context.Mercancia.Any(e => e.IntIdMercancia == id);
         }

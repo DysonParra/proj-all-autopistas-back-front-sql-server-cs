@@ -33,16 +33,26 @@ namespace Autopistas.Controllers {
     public class RegistroVehiculoController : Controller {
         private readonly AutopistasContext _context;
 
+        /**
+         * TODO: Description of method {@code RegistroVehiculoController}.
+         *
+         */
         public RegistroVehiculoController(AutopistasContext context) {
             _context = context;
         }
 
-        // GET: RegistroVehiculo
+        /**
+         * GET: RegistroVehiculo
+         *
+         */
         public async Task<IActionResult> Index() {
             return View(await _context.RegistroVehiculo.ToListAsync());
         }
 
-        // GET: RegistroVehiculo/Details/5
+        /**
+         * GET: RegistroVehiculo/Details/5
+         *
+         */
         public async Task<IActionResult> Details(long? id) {
             if (id == null || _context.RegistroVehiculo == null) {
                 return NotFound();
@@ -57,14 +67,20 @@ namespace Autopistas.Controllers {
             return View(registroVehiculo);
         }
 
-        // GET: RegistroVehiculo/Create
+        /**
+         * GET: RegistroVehiculo/Create
+         *
+         */
         public IActionResult Create() {
             return View();
         }
 
-        // POST: RegistroVehiculo/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        /**
+         * POST: RegistroVehiculo/Create
+         * To protect from overposting attacks, enable the specific properties you want to bind to.
+         * For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+         *
+         */
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("IntTiqueteNro,DtFechaHoraEstatica,IntPesoEstatica,IntSobrepeso,BitPesajeAutorizado,BitComparendo,IntCedulaConductor,IntCedulaUsuario,IntIdCategoria,IntIdMercancia,IntIdRepeso,StrPlacaVehiculo")] RegistroVehiculo registroVehiculo) {
@@ -76,7 +92,10 @@ namespace Autopistas.Controllers {
             return View(registroVehiculo);
         }
 
-        // GET: RegistroVehiculo/Edit/5
+        /**
+         * GET: RegistroVehiculo/Edit/5
+         *
+         */
         public async Task<IActionResult> Edit(long? id) {
             if (id == null || _context.RegistroVehiculo == null) {
                 return NotFound();
@@ -89,9 +108,12 @@ namespace Autopistas.Controllers {
             return View(registroVehiculo);
         }
 
-        // POST: RegistroVehiculo/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        /**
+         * POST: RegistroVehiculo/Edit/5
+         * To protect from overposting attacks, enable the specific properties you want to bind to.
+         * For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+         *
+         */
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(long? id, [Bind("IntTiqueteNro,DtFechaHoraEstatica,IntPesoEstatica,IntSobrepeso,BitPesajeAutorizado,BitComparendo,IntCedulaConductor,IntCedulaUsuario,IntIdCategoria,IntIdMercancia,IntIdRepeso,StrPlacaVehiculo")] RegistroVehiculo registroVehiculo) {
@@ -117,7 +139,10 @@ namespace Autopistas.Controllers {
             return View(registroVehiculo);
         }
 
-        // GET: RegistroVehiculo/Delete/5
+        /**
+         * GET: RegistroVehiculo/Delete/5
+         *
+         */
         public async Task<IActionResult> Delete(long? id) {
             if (id == null || _context.RegistroVehiculo == null) {
                 return NotFound();
@@ -132,7 +157,10 @@ namespace Autopistas.Controllers {
             return View(registroVehiculo);
         }
 
-        // POST: RegistroVehiculo/Delete/5
+        /**
+         * POST: RegistroVehiculo/Delete/5
+         *
+         */
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(long? id) {
@@ -148,6 +176,10 @@ namespace Autopistas.Controllers {
             return RedirectToAction(nameof(Index));
         }
 
+        /**
+         * TODO: Description of method {@code RegistroVehiculoExists}.
+         *
+         */
         private bool RegistroVehiculoExists(long? id) {
             return _context.RegistroVehiculo.Any(e => e.IntTiqueteNro == id);
         }

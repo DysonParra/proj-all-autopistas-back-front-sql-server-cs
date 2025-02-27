@@ -33,16 +33,26 @@ namespace Autopistas.Controllers {
     public class BadgeController : Controller {
         private readonly AutopistasContext _context;
 
+        /**
+         * TODO: Description of method {@code BadgeController}.
+         *
+         */
         public BadgeController(AutopistasContext context) {
             _context = context;
         }
 
-        // GET: Badge
+        /**
+         * GET: Badge
+         *
+         */
         public async Task<IActionResult> Index() {
             return View(await _context.Badge.ToListAsync());
         }
 
-        // GET: Badge/Details/5
+        /**
+         * GET: Badge/Details/5
+         *
+         */
         public async Task<IActionResult> Details(string id) {
             if (id == null || _context.Badge == null) {
                 return NotFound();
@@ -57,14 +67,20 @@ namespace Autopistas.Controllers {
             return View(badge);
         }
 
-        // GET: Badge/Create
+        /**
+         * GET: Badge/Create
+         *
+         */
         public IActionResult Create() {
             return View();
         }
 
-        // POST: Badge/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        /**
+         * POST: Badge/Create
+         * To protect from overposting attacks, enable the specific properties you want to bind to.
+         * For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+         *
+         */
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("StrTitle,StrClasses")] Badge badge) {
@@ -76,7 +92,10 @@ namespace Autopistas.Controllers {
             return View(badge);
         }
 
-        // GET: Badge/Edit/5
+        /**
+         * GET: Badge/Edit/5
+         *
+         */
         public async Task<IActionResult> Edit(string id) {
             if (id == null || _context.Badge == null) {
                 return NotFound();
@@ -89,9 +108,12 @@ namespace Autopistas.Controllers {
             return View(badge);
         }
 
-        // POST: Badge/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        /**
+         * POST: Badge/Edit/5
+         * To protect from overposting attacks, enable the specific properties you want to bind to.
+         * For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+         *
+         */
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(string id, [Bind("StrTitle,StrClasses")] Badge badge) {
@@ -117,7 +139,10 @@ namespace Autopistas.Controllers {
             return View(badge);
         }
 
-        // GET: Badge/Delete/5
+        /**
+         * GET: Badge/Delete/5
+         *
+         */
         public async Task<IActionResult> Delete(string id) {
             if (id == null || _context.Badge == null) {
                 return NotFound();
@@ -132,7 +157,10 @@ namespace Autopistas.Controllers {
             return View(badge);
         }
 
-        // POST: Badge/Delete/5
+        /**
+         * POST: Badge/Delete/5
+         *
+         */
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id) {
@@ -148,6 +176,10 @@ namespace Autopistas.Controllers {
             return RedirectToAction(nameof(Index));
         }
 
+        /**
+         * TODO: Description of method {@code BadgeExists}.
+         *
+         */
         private bool BadgeExists(string id) {
             return _context.Badge.Any(e => e.StrTitle == id);
         }
