@@ -28,7 +28,12 @@ namespace Autopistas.Data {
      * @since .NET 8 (LTS), C# 12
      */
     public class AutopistasContext : DbContext {
-        public AutopistasContext (DbContextOptions<AutopistasContext> options)
+
+        /**
+         * TODO: Description of method {@code AutopistasContext}.
+         *
+         */
+        public AutopistasContext(DbContextOptions<AutopistasContext> options)
             : base(options) {
         }
 
