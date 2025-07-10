@@ -1,5 +1,5 @@
 /*
- * @fileoverview    {Menu}
+ * @overview        {Menu}
  *
  * @version         2.0
  *

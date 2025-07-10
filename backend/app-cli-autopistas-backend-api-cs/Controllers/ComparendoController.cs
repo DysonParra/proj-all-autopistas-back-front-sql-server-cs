@@ -1,5 +1,5 @@
 ﻿/*
- * @fileoverview    {ComparendoController}
+ * @overview        {ComparendoController}
  *
  * @version         2.0
  *

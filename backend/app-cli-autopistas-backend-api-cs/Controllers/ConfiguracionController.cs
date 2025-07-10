@@ -1,5 +1,5 @@
 ﻿/*
- * @fileoverview    {ConfiguracionController}
+ * @overview        {ConfiguracionController}
  *
  * @version         2.0
  *

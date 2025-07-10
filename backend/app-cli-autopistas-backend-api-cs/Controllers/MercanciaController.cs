@@ -1,5 +1,5 @@
 ﻿/*
- * @fileoverview    {MercanciaController}
+ * @overview        {MercanciaController}
  *
  * @version         2.0
  *

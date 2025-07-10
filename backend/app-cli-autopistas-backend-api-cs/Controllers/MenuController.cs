@@ -1,5 +1,5 @@
 ﻿/*
- * @fileoverview    {MenuController}
+ * @overview        {MenuController}
  *
  * @version         2.0
  *

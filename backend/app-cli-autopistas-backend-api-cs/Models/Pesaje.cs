@@ -1,5 +1,5 @@
 /*
- * @fileoverview    {Pesaje}
+ * @overview        {Pesaje}
  *
  * @version         2.0
  *

@@ -1,5 +1,5 @@
 /*
- * @fileoverview    {Comparendo}
+ * @overview        {Comparendo}
  *
  * @version         2.0
  *

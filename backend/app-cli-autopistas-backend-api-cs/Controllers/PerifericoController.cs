@@ -1,5 +1,5 @@
 ﻿/*
- * @fileoverview    {PerifericoController}
+ * @overview        {PerifericoController}
  *
  * @version         2.0
  *
